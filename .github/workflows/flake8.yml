@@ -6,14 +6,14 @@ on:
     paths:
       - "**.py"
       - ".flake8"
-      - "./backend/requirements.txt"
+      - "./requirements.txt"
       - ".github/workflows/flake8.yaml"
   pull_request:
     branches: [ main ]
     paths:
       - "**.py"
       - ".flake8"
-      - "./backend/requirements.txt"
+      - "./requirements.txt"
       - ".github/workflows/flake8.yaml"
 
 jobs:
