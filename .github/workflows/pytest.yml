@@ -29,4 +29,4 @@ jobs:
       - name: Run pytests
         run: |
           pytest ./app -vv
-          pytest --cov-report term --cov=backend
+          pytest --cov-report term --cov=app
