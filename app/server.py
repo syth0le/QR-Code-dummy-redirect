@@ -1,9 +1,10 @@
 from flask import Flask, render_template, send_file
 
-from app.config import QR_CODE_PATH, SITE_URL
+from app.config import QR_CODE_PATH, SITE_URL, TEMPLATE_FOLDER
 from app.utils import generator_qr_code
 
-app = Flask('QR code redirecter')
+app = Flask('QR code redirecter', template_folder=TEMPLATE_FOLDER)
+app.config['UPLOAD_FOLDER'] = QR_CODE_PATH
 
 
 @app.get('/generate')

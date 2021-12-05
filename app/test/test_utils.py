@@ -1,4 +1,5 @@
 import os
+from os.path import join, dirname, realpath
 
 import pytest
 
@@ -14,7 +15,6 @@ def mocked_url_for(mocker):
 def test_generator_qr_code(mocked_url_for):
     mocked_url_for.return_value = '127.0.0.1:8080/dummy_request'
 
-    result_file = 'app' + QR_CODE_PATH[1:]
-    generator_qr_code(qr_path=result_file, site_domain='127.0.0.1:8080')
+    generator_qr_code(qr_path=QR_CODE_PATH, site_domain='127.0.0.1:8080')
 
-    assert os.path.exists(result_file)
+    assert os.path.exists(QR_CODE_PATH)
